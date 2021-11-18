@@ -10,3 +10,6 @@ yay -S pyxenon
 ```
 
 Watch gameplay on youtube: https://www.youtube.com/watch?v=DSRPR6Py-a4
+
+Screenshot:
+![img](images/screenshot.png?raw=true "Screenshot")
