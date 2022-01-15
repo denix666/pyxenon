@@ -7,7 +7,7 @@ import random
 
 
 def resource_path(relative_path):
-    base_path = os.path.abspath(".")
+    base_path = os.path.dirname(__file__)
     return os.path.join(base_path, relative_path)
 
 
@@ -17,6 +17,8 @@ FIRE_DELAY = 500
 HILLS_DELAY = 2800
 FUEL_DELAY = 10000  # как часто падают бочки с топливом
 LIVES_DELAY = 50000
+
+SCREEN_TITLE = "PyXenon v0.1 dev"
 
 # цвета
 WHITE = (255, 255, 255)
@@ -28,7 +30,7 @@ YELLOW = (255, 255, 0)
 
 # инициализация холста
 pygame.init()
-pygame.display.set_caption("PyXenon v0.1")
+pygame.display.set_caption(SCREEN_TITLE)
 window = pygame.display.set_mode((W, H))
 
 # загрузка графики
@@ -580,7 +582,7 @@ def play_frag_sound(num_of_fragged_enemies):
 def beep():
     if cur_game.state == "PLAYING":
         pygame.mixer.Sound.play(fuel_beep_sound)
-        
+
 
 def intro():
     window.blit(intro_bg, (0, 0))
@@ -853,3 +855,4 @@ while True:
 
     pygame.display.update()
     clock.tick(FPS)
+
